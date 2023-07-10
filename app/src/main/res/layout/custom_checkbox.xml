@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.checkbox.MaterialCheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/radio"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@null"
+    android:gravity="center"
+
+    android:paddingLeft="5dp"
+
+    android:buttonTint="@color/orange"
+
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:paddingStart="24dp"
+    android:paddingRight="5dp"
+    android:text="yourtexthere" />

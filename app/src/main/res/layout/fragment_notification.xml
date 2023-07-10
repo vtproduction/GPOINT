@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    >
+
+
+    <data>
+        <variable
+            name="FeedsCreatPostViewModel"
+            type="com.jedmahonisgroup.gamepoint.ui.createpost.FeedsCreatPostViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.feeds.FeedsFragment">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center_vertical"
+                        android:paddingRight="30dp">
+
+                        <Button
+                            android:id="@+id/view_profile_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Back"
+                            android:background="@drawable/bg_selected"
+                            android:drawableLeft="@drawable/ic_arrow_left"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14dp"
+
+                            />
+
+
+                        <TextView
+                            android:id="@+id/view_profile_fullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Notifications"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18dp"
+
+                            />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Back"
+                            android:background="@drawable/bg_selected"
+                            android:drawableLeft="@drawable/ic_arrow_left"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14dp"
+                            android:visibility="invisible"
+
+                            />
+
+
+                    </LinearLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/coordinator">
+
+
+                <RelativeLayout
+                    android:id="@+id/feedsNoDataView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:id="@+id/noDataFeedsImg"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/ic_no_data" />
+
+                    <TextView
+                        android:id="@+id/noFeedsFoundTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/noDataFeedsImg"
+                        android:layout_centerInParent="true"
+                        android:text="No Notifications"
+                        android:textAlignment="center"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+
+
+                </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/VPrecycle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+</layout>

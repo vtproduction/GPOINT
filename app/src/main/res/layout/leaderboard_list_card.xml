@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="78dp"
+    android:layout_below="@id/tabs"
+    android:background="@drawable/bg_transaction_list_item">
+
+    <View
+        android:id="@+id/separator1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dip"
+        android:visibility="gone"
+        android:background="#ffdfdfdf" />
+
+    <View
+        android:id="@+id/separator2"
+        android:layout_below="@+id/separator1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_marginTop="2dip"
+        android:background="#ffdfdfdf" />
+
+    <View
+        android:id="@+id/separator3"
+        android:layout_below="@+id/separator2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dip"
+        android:layout_marginBottom="2dp"
+        android:background="#ffdfdfdf" />
+
+
+    <RelativeLayout
+        android:id="@+id/leaderboardPView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/separator3">
+
+        <TextView
+            android:id="@+id/rowNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="1"
+            android:visibility="gone"
+            android:textColor="@color/colorDefaultGrey"
+            android:textSize="16sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16dp"
+            app:civ_border_width="0dp" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toLeftOf="@id/containerPoint"
+            android:layout_toRightOf="@id/userImage"
+            android:text="Dina G."
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/containerPoint"
+            android:background="@drawable/bg_header_left">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/icon_header1"
+                android:layout_marginLeft="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="2089"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingLeft="4dp"
+                android:id="@+id/numberOfPoints"
+                android:paddingRight="5dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

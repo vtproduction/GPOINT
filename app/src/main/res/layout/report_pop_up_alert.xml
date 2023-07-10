@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="203dp"
+    android:layout_height="350dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/buttonPostDeleteUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:textAlignment="textStart"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:text="Delete Post" />
+
+    <View
+        android:id="@+id/buttonPostDeleteUserLine"
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#A3A3A3"
+        android:layout_marginLeft="10dp"
+
+        android:layout_gravity="end"
+
+        />
+
+
+    <Button
+            android:id="@+id/buttonReportPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:padding="10dp"
+
+            app:strokeColor="@color/colorWhite"
+            android:text="Report Post" />
+
+        <View
+            android:id="@+id/buttonReportPostLine"
+
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#A3A3A3"
+            android:layout_marginLeft="10dp"
+
+            android:layout_gravity="end"
+
+            />
+
+
+
+
+    <Button
+        android:id="@+id/buttonCommentDeleteUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:textAlignment="textStart"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:text="Delete Comment" />
+
+    <View
+        android:id="@+id/buttonCommentDeleteUserLine"
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#A3A3A3"
+        android:layout_marginLeft="10dp"
+
+        android:layout_gravity="end"
+
+        />
+
+    <Button
+        android:id="@+id/buttonCommentReportUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:textAlignment="textStart"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:text="Report Comment" />
+
+    <View
+        android:id="@+id/buttonCommentReportUserLine"
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#A3A3A3"
+        android:layout_marginLeft="10dp"
+
+        android:layout_gravity="end"
+
+        />
+
+
+    <Button
+        android:id="@+id/buttonReportUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:textAlignment="textStart"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:text="Report User" />
+
+    <View
+        android:id="@+id/buttonReportUserLine"
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#A3A3A3"
+        android:layout_marginLeft="10dp"
+
+        android:layout_gravity="end"
+
+        />
+
+    <Button
+        android:id="@+id/buttonBlockUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:textAlignment="textStart"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:text="Block User" />
+
+    <View
+        android:id="@+id/buttonBlockUserLine"
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#A3A3A3"
+        android:layout_marginLeft="10dp"
+
+        android:layout_gravity="end"
+
+        />
+
+
+
+
+
+
+</LinearLayout>

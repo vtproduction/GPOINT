@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="22dip"
+    android:paddingTop="16dip"
+    android:paddingRight="22dip">
+
+    <ImageView
+        android:id="@+id/leadingIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@drawable/ic_football" />
+
+    <TextView
+        android:id="@+id/gameTitle"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/leadingIcon"
+        android:layout_toLeftOf="@id/pointValue"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="16dp"
+        android:text="Minnesota vs. Purdue"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/descTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/gameTitle"
+        android:layout_alignStart="@id/gameTitle"
+        android:layout_below="@id/gameTitle"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        android:paddingLeft="8dp"
+        android:textStyle="normal"/>
+
+    <Button
+        android:id="@+id/pointValue"
+        android:layout_width="64dip"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/small_green_button_list"
+        android:text="2000"
+        android:textColor="@color/colorGreen"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/subTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descTextView"
+        android:layout_toRightOf="@id/leadingIcon"
+        android:paddingLeft="8dp"
+        android:text="Sep. 25th, 11am" />
+
+    <Button
+        android:id="@+id/leadingButton"
+        android:layout_width="155dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/subTitleText"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@+id/leadingIcon"
+        android:background="@drawable/bg_selector"
+        android:paddingLeft="8dp"
+        android:text="Minnesota"
+        android:textColor="@color/colorUofMRed" />
+
+    <Button
+        android:id="@+id/trailingButton"
+        android:layout_width="155dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/subTitleText"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/leadingButton"
+        android:background="@drawable/bg_selector"
+        android:text="Purdue"
+        android:textColor="@color/colorUofMRed" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/trailingButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dip"
+        android:background="@color/colorDefaultGrey" />
+
+
+</RelativeLayout>

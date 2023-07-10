@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#702DF5</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="black_transparent">#f2000000</color>
+    <color name="white_transparent_50">#80FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="colorBottomNav">#f2f2f2</color>
+    <color name="colorUofMRed">#702DF5</color>
+    <color name="colorDefaultGrey">#999999</color>
+    <color name="colorGreyLight">#E2E2E2</color>
+    <color name="colorLightGrey">#eeeeee</color>
+    <color name="colorGreen">#62bb3b</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorYellow">#eec551</color>
+    <color name="textHintColor">#DDDDDD</color>
+    <color name="mapCircleColor">#806F2DF4</color>
+    <color name="colorPrimaryTransparent">#702DF5</color>
+
+    <color name="colorMapRadiusAccent">#A31621</color>
+    <color name="colorMapRadius">#CED3DC</color>
+
+    <color name="ucrop_color_toolbar">@color/colorPrimary</color>
+    <color name="ucrop_color_statusbar">@color/colorPrimary</color>
+    <color name="ucrop_color_widget_active">@color/colorPrimary</color>
+
+    <color name="c1">#682AE3</color>
+    <color name="c2">#6127D6</color>
+    <color name="orange">#FF9A2C</color>
+
+
+</resources>

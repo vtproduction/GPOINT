@@ -1,0 +1,241 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion 33
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildscript {
+        repositories {
+//            maven { url 'https://maven.fabric.io/public' }
+
+        }
+
+        dependencies {
+            // These docs use an open ended version so that our plugin
+            // can be updated quickly in response to Android tooling updates
+
+            // We recommend changing it to the latest version from our changelog:
+            // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin
+
+
+        }
+
+    }
+
+
+
+
+    repositories {
+        mavenCentral()
+        google()  // Google's Maven repository
+    }
+
+
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId "com.jedmahonisgroup.gamepoint"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 45
+        versionName "1.1.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        setProperty("archivesBaseName", "Game Point v-$versionName build $versionCode")
+        kapt {
+            correctErrorTypes true
+//            generateStubs = true
+            arguments {
+            }
+        }
+    }
+
+
+    androidExtensions {
+        experimental = true
+    }
+
+
+    buildTypes {
+        debug {
+            buildConfigField "String", 'BASE_URL', '"https://gamepoint-dev.mavi-tech.com"'
+            buildConfigField "String", 'BASE_URL_2', '"https://gamepoint-api.mavi-tech.com"'
+            resValue("string", "PORT_NUMBER", "8081")
+//            minifyEnabled true
+//            firebaseCrashlytics {
+//                mappingFileUploadEnabled false
+//            }
+//            buildConfigField "String", 'BASE_URL', '"https://api.gamepoint.fans"'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", 'BASE_URL', '"https://api.gamepoint.fans"'
+            buildConfigField "String", 'BASE_URL_2', '"https://gamepoint-api.mavi-tech.com"'
+//            buildConfigField "String", 'BASE_URL', '"https://sandbox.gamepoint.fans"'
+
+
+        }
+
+
+    }
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    namespace 'com.jedmahonisgroup.gamepoint'
+
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //Circular Image View
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.cardview:cardview:1.0.0"
+
+
+
+    implementation "androidx.fragment:fragment-ktx:1.5.3"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'com.google.firebase:firebase-analytics:21.1.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // Support Design
+    implementation 'com.google.android.material:material:1.7.0'
+
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    // Constraint Layout
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // LiveData & ViewModel
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // Room
+    implementation 'androidx.room:room-rxjava2:2.4.3'
+    implementation 'androidx.room:room-runtime:2.4.3'
+    kapt 'androidx.room:room-compiler:2.4.3'
+
+
+//    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
+
+
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+
+    //Firebase
+
+    implementation 'com.google.firebase:firebase-core:17.5.0'
+    // this line must be included to integrate with Firebase
+    implementation 'com.google.firebase:firebase-messaging:20.3.0'
+    // this line must be included to use FCM
+
+    // Recommended: Add the Firebase SDK for Google Analytics.
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    // Add the Firebase Crashlytics SDK.
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger:2.38.1"
+    kapt "com.google.dagger:dagger-compiler:2.38.1"
+    implementation "org.glassfish:javax.annotation:3.1.1"
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:2.2.19"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+
+
+    //maps
+    //implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+
+    //circle progress
+    implementation 'com.github.antonKozyriatskyi:CircularProgressIndicator:1.3.0'
+
+    implementation 'com.github.warkiz:IndicatorSeekBar:v2.1.1'
+
+    //image picker
+//    implementation 'com.azoft.carousellayoutmanager:carousel:1.4.6'
+    implementation "com.github.Drjacky:ImagePicker:2.1.13"
+
+    //time
+    implementation 'joda-time:joda-time:2.10.9'
+
+    //noinspection OutdatedLibrary
+
+//    implementation 'com.github.florent37:inline-activity-result-kotlin:1.0.4'
+
+    implementation 'com.github.javiersantos:AppUpdater:2.6.4'
+
+    implementation 'com.gitlab.developerdeveloperdeveloper:androidutilslibrary:1.0.0'
+
+
+    implementation 'com.google.android.play:core:1.10.3'
+
+    implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
+
+    //circle imageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
+
+    //youtube player
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0'
+
+
+}
+
+
+//GamePoint
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'kotlin-kapt'
+
+

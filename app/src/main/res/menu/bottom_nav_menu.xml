@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_recents"
+        android:enabled="true"
+        android:checked="false"
+        android:icon="@drawable/menu_0"
+        android:title="Events"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_conference"
+        android:enabled="true"
+        android:checked="false"
+        android:icon="@drawable/menu_1"
+        android:title="Pick 'Em"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_leaderboard"
+        android:enabled="true"
+        android:checked="false"
+        android:icon="@drawable/menu_2"
+        android:title="Leaderboard"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_reward"
+        android:enabled="true"
+        android:checked="false"
+        android:icon="@drawable/menu_3"
+        android:title="Rewards"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:enabled="true"
+        android:checked="false"
+        android:icon="@drawable/menu_4"
+        android:title="Settings"
+        app:showAsAction="ifRoom" />
+</menu>

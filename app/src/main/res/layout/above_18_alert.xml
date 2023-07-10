@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:layout_width="match_parent"
+     android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/alert_diag_bg">
+
+        <TextView
+            android:id="@+id/required"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Required"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/aboveEighteenText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/required"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="You must be 18 years or older to use this app. Please refer to the terms of service"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingEnd="12dp"
+            android:paddingStart="12dp"
+            android:orientation="vertical"
+            android:paddingBottom="12dp"
+            android:gravity="center"
+            android:layout_below="@id/aboveEighteenText">
+
+            <Button
+                android:id="@+id/okBtn"
+
+                android:text="Ok"
+                android:textAllCaps="false"
+                android:layout_alignParentEnd="true"
+                android:padding="8dp"
+                style="@style/loginButton"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/termsOfServiceBtn"
+
+                android:layout_alignParentStart="true"
+                android:text="Terms Of Service"
+                android:textAllCaps="false"
+
+                style="@style/loginButton"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.picks.ConferenceActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <!--Find a better way to change this text color-->
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/items"
+                    android:theme="@style/spinnerTheme" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="16dip"
+                    android:background="@drawable/green_button"
+                    android:text="+ 22,173"
+                    android:textColor="@color/cardview_light_background" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <include
+        android:layout_below="@+id/coordinator"
+        android:id="@+id/infoBar"
+        layout="@layout/user_info_bar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+    <include
+        android:id="@+id/dayBar"
+        layout="@layout/day_view"
+        android:layout_width="match_parent"
+        android:layout_height="32dip"
+        android:layout_below="@+id/infoBar">
+
+    </include>
+
+    <include
+        layout="@layout/conference_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dayBar"
+        android:layout_marginTop="1dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/colorBottomNav"
+        app:itemBackground="@color/colorBottomNav"
+        app:itemIconTint="@color/share_color"
+        app:itemTextColor="@color/share_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

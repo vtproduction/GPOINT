@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+
+        <item
+            android:id="@+id/feedsNavItemCreatePost"
+            android:icon="@drawable/ic_plus_box_outline"
+            android:title="Create Post" />
+
+        <item
+            android:id="@+id/feedsNavItemManageFriends"
+            android:icon="@drawable/ic_account_multiple"
+            android:title="Manage Friends" />
+
+
+
+        <item
+            android:id="@+id/feedsNavItemNotification"
+            android:icon="@drawable/ic_bell"
+            android:title="Notifications" />
+
+
+        <item
+            android:id="@+id/feedsNavItemAccountEdit"
+            android:icon="@drawable/ic_account_edit"
+            android:title="Edit Profile" />
+
+        <group android:id="@+id/nav_footer">
+                <item
+                    android:id="@+id/nav_footer_1"
+                    android:title="Log out"
+                    android:icon="@drawable/ic_baseline_exit_to_app_24"
+                      />
+
+        </group>
+
+</menu>

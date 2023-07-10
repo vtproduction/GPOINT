@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dealsViewModel"
+            type="com.jedmahonisgroup.gamepoint.ui.deals.DealsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_splash">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_redeem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <!--Find a better way to change this text color-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="16dip">
+
+                        <Button
+                            android:id="@+id/redeemTotalPointsCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:layout_gravity="end"
+                            android:layout_toRightOf="@id/dealSettings"
+                            android:background="@drawable/green_button"
+                            android:textColor="@color/cardview_light_background" />
+
+                        <ImageButton
+                            android:id="@+id/dealSettings"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/ic_settings" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Redeem"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <RelativeLayout
+            android:id="@+id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_below="@+id/coordinator"
+            android:layout_centerHorizontal="true">
+            <ImageButton
+                android:visibility="visible"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_feather_chevron_left_orange"
+                android:background="@color/transparent"
+                android:id="@+id/btnBack"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:id="@+id/center_anchor"
+                android:layout_centerInParent="true"/>
+            <Button
+                android:id="@+id/inStoreButton"
+                android:layout_width="130dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:text="In Store"
+                android:textAllCaps="false"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textColor="@color/colorWhite"
+                android:layout_toStartOf="@id/center_anchor"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/onlineButton"
+                android:layout_width="130dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/center_anchor"
+                android:text="Online"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_transparent_50"
+                android:layout_alignParentBottom="true"
+                />
+            <View
+                android:layout_width="130dp"
+                android:layout_height="1dp"
+                android:background="@color/orange"
+                android:layout_alignStart="@+id/inStoreButton"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/inStoreButton_ind"
+                android:visibility="gone"/>
+            <View
+                android:layout_width="130dp"
+                android:layout_height="1dp"
+                android:background="@color/orange"
+                android:layout_alignStart="@+id/onlineButton"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/onlineButton_ind"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabs"
+            tools:context=".ui.deals.DealFragment">
+
+            <RelativeLayout
+                android:id="@+id/dealsNoDataView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/noDataFeedsImg"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_feather_meh" />
+
+                <TextView
+                    android:id="@+id/noFeedsFoundTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/noDataFeedsImg"
+                    android:layout_marginTop="48dp"
+                    android:text="@string/no_deal_available"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/leadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:text="@string/featured_stores"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/deal_swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/leadingText">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dealsRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <!--<android.support.design.widget.CoordinatorLayout-->
+            <!--android:id="@+id/coordinator"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<android.support.design.widget.AppBarLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<android.support.v7.widget.Toolbar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_scrollFlags="scroll|enterAlways">-->
+
+            <!--&lt;!&ndash;Find a better way to change this text color&ndash;&gt;-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Redeem"-->
+            <!--android:textColor="@color/colorWhite"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="28dp"-->
+            <!--android:layout_gravity="end"-->
+            <!--android:layout_marginRight="16dip"-->
+            <!--android:background="@drawable/green_button"-->
+            <!--android:text="+ 22,173"-->
+            <!--android:textColor="@color/cardview_light_background" />-->
+            <!--</android.support.v7.widget.Toolbar>-->
+            <!--</android.support.design.widget.AppBarLayout>-->
+
+            <!--</android.support.design.widget.CoordinatorLayout>-->
+
+
+            <!--<android.support.v4.widget.NestedScrollView-->
+            <!--android:layout_below="@id/coordinator"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/featuredStories"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="16dp"-->
+            <!--android:text="Leaderboard"-->
+            <!--android:textColor="@color/colorUofMRed"-->
+            <!--android:textSize="24sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--<HorizontalScrollView-->
+            <!--android:id="@+id/one"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/featuredStories"-->
+            <!--android:scrollbars="horizontal">-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/test1"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:background="@drawable/test_one"-->
+            <!--android:padding="10dp" />-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/two"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_margin="15dp"-->
+            <!--android:background="@drawable/test2" />-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/three"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:background="@drawable/test3"-->
+            <!--android:padding="10dp" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--</HorizontalScrollView>-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/nearby"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/one"-->
+            <!--android:padding="16sp"-->
+            <!--android:text="Nearby"-->
+            <!--android:textColor="@color/colorUofMRed"-->
+            <!--android:textSize="24sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--<HorizontalScrollView-->
+            <!--android:id="@+id/hi"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/nearby"-->
+            <!--android:scrollbars="horizontal">-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/first"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:background="@drawable/test2"-->
+            <!--android:padding="10dp" />-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/two2"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_margin="15dp"-->
+            <!--android:background="@drawable/test3" />-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/three3"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:background="@drawable/test_one"-->
+            <!--android:padding="10dp" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--</HorizontalScrollView>-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/mostpopular"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/hi"-->
+            <!--android:padding="16dp"-->
+            <!--android:text="Nearby"-->
+            <!--android:textColor="@color/colorUofMRed"-->
+            <!--android:textSize="24sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--<HorizontalScrollView-->
+            <!--android:id="@+id/last"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/mostpopular"-->
+            <!--android:scrollbars="horizontal">-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/test2"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_below="@id/nearby"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:background="@drawable/test3" />-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/test3"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_below="@id/mostpopular"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:layout_margin="15dp"-->
+
+            <!--android:background="@drawable/test_one" />-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/test4"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_below="@id/mostpopular"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:background="@drawable/test_one" />-->
+
+
+            <!--</LinearLayout>-->
+
+
+            <!--</HorizontalScrollView>-->
+
+            <!--</RelativeLayout>-->
+            <!--</android.support.v4.widget.NestedScrollView>-->
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</layout>

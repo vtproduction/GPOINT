@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="uploadPictureViewModel"
+            type="com.jedmahonisgroup.gamepoint.ui.UploadPictureViewModel" />
+    </data>
+
+<RelativeLayout
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    tools:context=".ui.UploadPictureActivity">
+    <RelativeLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+        <ImageButton
+            android:layout_alignParentStart="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/icon_feather_chevron_left_orange"
+            android:background="@color/transparent"
+            android:visibility="gone"
+            android:id="@+id/btnBack"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Add A Profile Picture"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="64dp">
+
+                <RelativeLayout
+                    android:id="@+id/profileUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imgProfilePlaceHolder"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_photo_camera_24px"
+                        android:scaleType="centerInside" />
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/imgProfile"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/userPicReason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profileUpload"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"
+                    android:text="@string/Add_Picture_Reason_Text"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:paddingHorizontal="56dp"
+                    android:textStyle="" />
+
+                <Button
+                    android:id="@+id/addProfilePics"
+                    style="@style/loginButton"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userPicReason"
+                    android:layout_centerHorizontal="true"
+                    android:text="Add Profile Picture"
+                    android:layout_marginTop="24dp"
+                    android:visibility="visible" />
+                <Button
+                    android:id="@+id/looksGood"
+                    style="@style/loginButton"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userPicReason"
+                    android:layout_centerHorizontal="true"
+                    android:text="Looks Good"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/retry"
+                    style="@style/loginButton_outline"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/looksGood"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+
+                    android:text="Retry"
+
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/skip"
+                    style="@style/loginTextButton"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userPicReason"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="120dp"
+                    android:text="Skip"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+</layout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="280dp"
+    android:layout_marginTop="24dp"
+    app:cardCornerRadius="12dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    tools:context=".ui.UploadPictureActivity"
+    tools:showIn="@layout/upload_picture_activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Camera Only"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <ImageView
+            android:id="@+id/imgCamera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorDefaultGrey"
+            android:scaleType="centerCrop" />
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_camera_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/outline_cloud_upload_white_24"
+        app:backgroundTint="@color/colorPrimary"
+        app:useCompatPadding="true"
+        app:tint="@color/colorWhite" />
+
+</androidx.cardview.widget.CardView>

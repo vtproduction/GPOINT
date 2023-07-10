@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.settings.SettingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.events.EventsFragment">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/privacy_settings_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center_vertical"
+                        android:paddingRight="30dp">
+
+                        <Button
+                            android:id="@+id/view_profile_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:background="#00000000"
+                            android:drawableLeft="@drawable/ic_arrow_left"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14dp"
+
+                            />
+
+
+                        <TextView
+                            android:id="@+id/view_profile_fullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Privacy Setting"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18dp"
+
+                            />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Back"
+                            android:background="@drawable/bg_selected"
+                            android:drawableLeft="@drawable/ic_arrow_left"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14dp"
+                            android:visibility="invisible"
+
+                            />
+
+
+                    </LinearLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/coordinator"
+            android:visibility="gone">
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/checkedinUi"
+            android:background="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/swipeContainer"
+            >
+
+
+            <TextView
+                android:id="@+id/titleprivacysetting"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Privacy Setting"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="10dp"
+                ></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/titleprivacysetting"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <FrameLayout
+
+                            android:layout_width="75dp"
+                            android:layout_height="75dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:scaleX="1.50"
+                                android:scaleY="1.50"
+                                android:src="@drawable/ic_baseline_public_24"
+
+                                >
+
+
+                            </ImageView>
+
+
+                        </FrameLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Public"
+                                android:textSize="22sp"
+
+                                android:textColor="@color/colorPrimaryDark"
+                                ></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Your posts will be visible to everyone"
+                                android:textSize="14sp"
+
+                                android:textColor="@color/colorDefaultGrey"
+                                ></TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+
+                                android:layout_width="75dp"
+                                android:layout_height="75dp">
+                                <RadioButton
+                                    android:id="@+id/radioButtonPublic"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:buttonTint="@color/colorPrimaryDark"
+                                    android:scaleX="1.50"
+                                    android:scaleY="1.50"
+                                    />
+
+                            </FrameLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <FrameLayout
+
+                        android:layout_width="75dp"
+                        android:layout_height="75dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:scaleX="1.50"
+                            android:scaleY="1.50"
+                            android:src="@drawable/ic_account_group"
+
+                            >
+
+
+                        </ImageView>
+
+
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Private"
+                            android:textSize="22sp"
+
+                            android:textColor="@color/colorPrimaryDark"
+                            ></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your posts are only visible to you and your friends"
+                            android:textSize="14sp"
+
+                            android:textColor="@color/colorDefaultGrey"
+                            ></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+
+                            android:layout_width="75dp"
+                            android:layout_height="75dp">
+                            <RadioButton
+                                android:id="@+id/radioButtonPrivate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:buttonTint="@color/colorPrimaryDark"
+                                android:scaleX="1.50"
+                                android:scaleY="1.50"
+                                />
+
+                        </FrameLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Blocked User"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="10dp"
+                    ></TextView>
+
+                <Button
+                    android:id="@+id/blockeduser"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/btn_settings"
+                    android:paddingLeft="28dp"
+                    android:layout_below="@+id/editProfile"
+                    android:text="   Blocked"
+                    android:drawableLeft="@drawable/ic_baseline_block_24"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

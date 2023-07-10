@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    tools:context=".ui.settings.EditProfile">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/parentRelative"
+        android:background="@drawable/bg_splash">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:id="@+id/coordinator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.appbar.MaterialToolbar
+                            android:id="@+id/edit_profile_toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="4dp"
+                            android:theme="@style/AppTheme.flatToolbar"
+                            app:navigationIcon="?attr/homeAsUpIndicator"
+                            app:titleCentered="true"
+                            app:title="Edit Profile" />
+
+                    </com.google.android.material.appbar.AppBarLayout>
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                <FrameLayout
+                    android:id="@+id/overlapImageLayout"
+                    android:layout_below="@+id/coordinator"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="222dp">
+                    <ImageView
+                        android:id="@+id/overlapImage"
+
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_img_pick_place_holder" />
+
+                </FrameLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/bottomhalf"
+                    android:layout_below="@+id/overlapImageLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <LinearLayout
+                        android:id="@+id/editUserNameLayout"
+
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        >
+
+
+
+                        <EditText
+                            android:id="@+id/editUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:drawableStart="@drawable/icon_feather_user"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/btn_blackngray"
+                            android:ems="15"
+                            android:textColor="@color/colorPrimary"
+                            android:drawablePadding="12dp"
+                            android:inputType="text"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:hint="First Name"
+                            android:textColorHint="#DDDDDD"
+                            android:textCursorDrawable="@null" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/editLastNameLayout"
+                        android:layout_below="@+id/editUserNameLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        >
+
+
+
+                        <EditText
+                            android:id="@+id/editLastName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@color/colorPrimary"
+                            android:drawableStart="@drawable/icon_feather_user"
+                            android:drawablePadding="12dp"
+                            android:background="@drawable/btn_blackngray"
+                            android:ems="15"
+                            android:hint="Last Name"
+                            android:textColorHint="#DDDDDD"
+                            android:inputType="text"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textCursorDrawable="@null" />
+
+
+                    </LinearLayout>
+
+
+
+
+                    <LinearLayout
+                        android:id="@+id/editPhoneNumberFieldLayout"
+                        android:layout_below="@+id/editLastNameLayout"
+
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        >
+
+                        <EditText
+                            android:id="@+id/editPhoneNumberField"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:drawableStart="@drawable/icon_feather_smartphone"
+                            android:drawablePadding="12dp"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/birthDayFieldLayout"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/btn_blackngray"
+                            android:ems="15"
+                            android:inputType="number"
+                            android:focusableInTouchMode="true"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:hint="Phone Number"
+                            android:textColorHint="#DDDDDD"  />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/editnickNameFieldLayout"
+                        android:layout_below="@+id/birthDayFieldLayout"
+
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        >
+
+
+                        <EditText
+                            android:id="@+id/editnickNameField"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@color/colorPrimary"
+                            android:drawableStart="@drawable/icon_feather_user_check"
+                            android:drawablePadding="12dp"
+                            android:background="@drawable/btn_blackngray"
+                            android:ems="15"
+                            android:hint="User Name"
+                            android:textColorHint="#DDDDDD"
+                            android:inputType="textEmailAddress"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textCursorDrawable="@null" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/birthDayFieldLayout"
+                        android:layout_below="@+id/editPhoneNumberFieldLayout"
+
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        >
+
+
+                        <LinearLayout
+                            android:id="@+id/editBirthDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/btn_blackngray"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/birthDayField"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:textColor="@color/colorPrimary"
+                                android:drawableStart="@drawable/icon_feather_gift"
+                                android:drawablePadding="12dp"
+                                android:background="@drawable/btn_blackngray"
+                                android:clickable="true"
+                                android:ems="15"
+                                android:enabled="true"
+                                android:focusable="false"
+                                android:inputType="date"
+
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:textCursorDrawable="@null"
+                                android:hint="Birthday"
+                                android:textColorHint="#DDDDDD"  />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/editEmailFieldLayout"
+                        android:layout_below="@+id/editnickNameFieldLayout"
+
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        >
+
+
+                        <EditText
+                            android:id="@+id/editEmailField"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:textColor="@color/colorPrimary"
+                            android:drawableStart="@drawable/icon_feather_mail"
+                            android:drawablePadding="12dp"
+                            android:background="@drawable/btn_blackngray"
+                            android:ems="15"
+                            android:inputType="textEmailAddress"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textCursorDrawable="@null"
+                            android:hint="Email"
+                            android:textColorHint="#DDDDDD" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/schoolLayout"
+                        android:layout_below="@id/editEmailFieldLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:id="@+id/schoolTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/btn_blackngray"
+                            android:textColor="@color/colorPrimary"
+                            app:drawableStartCompat="@drawable/icon_feather_book"
+                            android:ems="15"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:drawablePadding="12dp"
+                            android:textSize="18dp"
+                            android:hint="School"
+                            android:textColorHint="#DDDDDD"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/editSignWithCodeFieldLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/schoolLayout"
+                        android:orientation="vertical"
+                        >
+
+
+
+                        <EditText
+                            android:id="@+id/editSignWithCodeField"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/btn_blackngray"
+                            android:drawableStart="@drawable/icon_feather_key"
+                            android:textColor="@color/colorPrimary"
+                            android:drawablePadding="12dp"
+                            android:ems="15"
+                            android:inputType="textEmailAddress"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textCursorDrawable="@null"
+                            android:hint="Sign up code (Optional)"
+                            android:textColorHint="#DDDDDD" />
+
+
+                    </LinearLayout>
+                    <Button
+                        style="@style/loginButton"
+                        android:id="@+id/updateProfile"
+                        android:layout_marginVertical="48dp"
+                        android:layout_marginHorizontal="96dp"
+                        android:text="Save"
+                        android:textSize="24sp"
+                        android:layout_below="@id/editSignWithCodeFieldLayout"/>
+
+
+
+                    <ProgressBar
+                        android:id="@+id/editProfilePending"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_marginTop="-5dp"
+                        android:visibility="invisible" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+        </RelativeLayout>
+
+
+
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#ff63bb3c" />
+        </shape>
+    </item>
+    <!--android:drawable="@drawable/ic_confetti"></item>-->
+</layer-list>
+

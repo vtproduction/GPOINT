@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="345dp"
+    android:padding="16dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_diag_bg">
+
+    <TextView
+        android:id="@+id/checkedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/location"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkedIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/permission_text"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/allow"
+        style="@style/loginButton"
+        android:layout_below="@+id/info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+
+        android:text="@string/allow_location"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/allow"
+        android:layout_centerHorizontal="true"
+        android:text="@string/hide_location"
+        android:textAllCaps="false"
+        style="@style/loginTextButton"
+        android:textSize="16sp" />
+
+</RelativeLayout>

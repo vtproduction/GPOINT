@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="345dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_diag_bg"
+    android:padding="16dp">
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/green_circle"-->
+        <!--android:layout_width="160dp"-->
+        <!--android:layout_height="161dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@drawable/qr_code">-->
+
+    <!--</RelativeLayout>-->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_check_circle_outline"
+        android:tint="@color/colorGreen"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"
+        android:visibility="gone"
+        android:id="@+id/checkmark_in_circle_image_view"
+        />
+
+    <TextView
+        android:id="@+id/titleCheckedIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Free 6” Sub"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/dealCoupon"
+        android:layout_below="@+id/titleCheckedIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:text="FREE"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/infoCheckedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dealCoupon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="0dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:text="Show your phone to the cashier to complete the transaction."
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoCheckedIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:text=""
+        android:textStyle="bold"
+        android:textColor="@color/colorUofMRed"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/completeTransaction"
+        android:layout_below="@+id/timer"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:layout_marginBottom="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorWhite"
+        android:text="Visit Website"
+        style="@style/loginButton"/>
+
+</RelativeLayout>

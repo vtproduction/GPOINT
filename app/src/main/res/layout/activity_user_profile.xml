@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.settings.SettingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.events.EventsFragment"
+        android:background="@drawable/bg_splash">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/settings_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Settings"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                   <!-- <Button
+                        android:id="@+id/userPoints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="16dip"
+                        android:background="@drawable/green_button"
+                        android:text=""
+                        android:textColor="@color/cardview_light_background" />-->
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/coordinator"
+            android:visibility="gone">
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/checkedinUi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/swipeContainer"
+            android:layout_marginTop="20dp">
+
+
+            <Button
+                android:id="@+id/editProfile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_settings"
+                android:paddingLeft="28dp"
+
+                android:text="Edit Profile"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/privacySetting"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_settings"
+                android:paddingLeft="28dp"
+                android:layout_below="@+id/editProfile"
+                android:text="Privacy Setting"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/privacyPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/privacySetting"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_settings"
+                android:paddingLeft="28dp"
+                android:text="Privacy Policy"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/termsAndConditions"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/privacyPolicy"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_settings"
+                android:paddingLeft="28dp"
+                android:text="Terms and Conditions"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/contestTerms"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/termsAndConditions"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_settings"
+                android:paddingLeft="28dp"
+                android:text="Terms of Contest"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/faq"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/contestTerms"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_settings"
+                android:paddingLeft="28dp"
+                android:text="FAQ"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/faq"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorWhite"
+                android:text="Log Out"
+                android:textAllCaps="false"
+                android:textColor="@color/colorUofMRed"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/versionBuildNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="20dp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

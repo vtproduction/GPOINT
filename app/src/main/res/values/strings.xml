@@ -1,0 +1,154 @@
+<resources>
+    <string name="app_name">Game Point</string>
+    <string name="forgot_your_password">Forgot Your Password?</string>
+    <string name="login">Login</string>
+    <string name="e_mail_hint">E-mail</string>
+    <string name="password_hint">Password</string>
+    <string name="signUp">Sign up</string>
+    <string name="alreadySignedUp">Already Signed Up?</string>
+    <string name="usernamehint">First Name</string>
+    <string name="lastnamehint">Last Name</string>
+    <string name="birthdayhint">Birthday</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="phonemuberhint">Phone Number</string>
+    <string name="sign_with_code_hint">Redeem Code</string>
+    <string name="sponsored_by">Sponsored by</string>
+    <string name="no_feed_available">No feeds available</string>
+    <string name="no_feed_available_text">Add New Feeds :D</string>
+    <string name="no_deal_available">No Deals available</string>
+    <string name="no_game_available">No available games at that moment!</string>
+    <string name="no_posts_yet">No Posts Yet</string>
+
+    <string name="todays_trivia_is_finished">Today\'s Trivia is Finished</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="picks">Picks</string>
+    <string name="points">points</string>
+    <string name="title_activity_leader_board">LeaderBoardActivity</string>
+
+    <string name="geofence_transition_entered">Entered</string>
+    <string name="geofence_transition_exited">Exited</string>
+    <string name="unknown_geofence_transition">Unknown Transition</string>
+
+    <string name="geofence_transition_notification_text">Click notification to return to app</string>
+
+    <string name="retry">Retry</string>
+    <string name="sign_up_error">An error occurred while creating your account</string>
+
+    <string name="sign_up_success">Success</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiYWxlY2tzb24iLCJhIjoiY2p2cHF6emZxMGJ4dzRhbzhtc3FwaHJrbiJ9.WMgt2DLDj99E_OpxxU4tRg</string>
+    <string name="info">Keep this app running to earn points  while you are checked in at this event</string>
+    <string name="NO_AUTH_HEADER_KEY">No-Authentication</string>
+    <string name="redeem_text">Are you sure you would like to spend 3000 points to get a Free 6” Sub? You MUST be at this location to redeem. Once used, your points will be deducted.</string>
+    <string name="error_check_in">Looks like you can not check in to this event. This happens when you are either, not at the event, the game has not started or the game has ended. </string>
+    <string name="permission_text">Your location is used to know whether or not you were actually attending an event. It is not used for any other purpose. To be able to get points, please select always allow.</string>
+    <string name="location">Location</string>
+    <string name="allow_location">Use Location</string>
+    <string name="hide_location">Don\'t Use Location</string>
+    <string name="NO_LEADERBOARD_DATA">There is not leaderboard data yet. Check back later</string>
+
+
+    <string name="geofence_unknown_error">
+    Unknown error: the Geofence service is not available now.
+  </string>
+    <string name="geofence_not_available">
+    Geofence service is not available now. Go to Settings>Location>Mode and choose High accuracy.
+  </string>
+    <string name="geofence_too_many_geofences">
+    Your app has registered too many geofences.
+  </string>
+    <string name="geofence_too_many_pending_intents">
+    You have provided too many PendingIntents to the addGeofences() call.
+
+  </string>
+    <string name="unknown_geofence_error">
+        Unknown error: the Geofence service is not available now
+    </string>
+    <string name="geofence_transition_invalid_type">
+        Geofence transition error: invalid transition type %1$d
+    </string>
+    <string name="Add_Picture_Reason_Text">Game Point is more fun when you add a profile picture! </string>
+    <string name="error_posting_deal">There was a problem redeeming this deal, make sure you have an internet connection and try again.</string>
+    <string name="error_login">Either your Email/Password combination Invalid or there is a problem with the server. Please try again later</string>
+    <string name="pick_closed_error">This pick is now closed. Check back later for the results!</string>
+    <string name="terms_of_service"><![CDATA[<a href=\"http://www.google.com\">Google</a></string>]]></string>
+    <string name="privacy_policy"><![CDATA[<a href=\"http://www.google.com\">Google</a></string>]]></string>
+    <string name="terms_of_contest">Google</string>
+    <string name="pattern">%</string>
+    <string name="change_schools_desc">Are you sure you want to change schools? This will erase some of your info if you continue.</string>
+    <string name="change_schools_title">Change Schools?</string>
+    <string name="change_schools">Change Schools</string>
+
+    <string name="facebook_app_id">755272251962306</string>
+    <string name="featured_stores">FEATURED STORES</string>
+    <string name="online_stores">ONLINE STORES</string>
+
+    <string name="pick_timer_explanation">You will have 1 minute to make your pick selections. Tapping \'Get Started\' will start the timer, which will not stop until your minuet is up. Are you ready?</string>
+    <string name="august_first_leaderboard_bottom">Leaderboard will be resuming on September 1.</string>
+    <string name="august_fist_picks_bottom">Picks will be resuming on September 1.</string>
+    <string name="august_first_results_bottom">Results will be resuming on September 1.</string>
+
+    <style name="def_notification_channel_id">game_point_default_notification_channel_id</style>
+
+    <string name="title_activity_social_menu">SocialMenu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_second">Home Second</string>
+
+    <string name="app_name_image_picker" translatable="false">Image Picker</string>
+    <string name="image_picker_provider_authority_suffix" translatable="false">.imagepicker.provider</string>
+
+    <string name="title_choose_image_provider">Choose</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="title_gallery">Gallery</string>
+    <string name="title_camera">Camera</string>
+
+    <string name="start_trivia_questions">Start Trivia Questions</string>
+    <string name="thirty_seconds">0:30</string>
+
+    <string name="permission_camera_denied">
+        <![CDATA[Camera permission is needed to take a picture. Please allow permission from Settings > Permissions.]]></string>
+
+    <string name="error_failed_to_create_camera_image_file">Failed to create Camera image file</string>
+    <string name="error_failed_pick_gallery_image">Failed to pick Gallery image</string>
+    <string name="error_failed_to_crop_image">Failed to crop image</string>
+    <string name="error_failed_to_compress_image">Failed to compress image</string>
+    <string name="error_task_cancelled">Task Cancelled</string>
+    <string name="error_camera_app_not_found">Camera app not found</string>
+
+    <!-- uCrop string resource start -->
+    <string name="ucrop_label_original">Original</string>
+    <string name="ucrop_label_edit_photo">Edit Photo</string>
+    <string name="ucrop_menu_crop">Crop</string>
+    <string name="ucrop_rotate">Rotate</string>
+    <string name="ucrop_scale">Scale</string>
+    <string name="ucrop_crop">Crop</string>
+    <string name="your_balance">Your Balance</string>
+    <string name="current_token_value">Current Token Value</string>
+    <string name="buy_game_point_token">Buy GamePoint Tokens</string>
+    <string name="swap_game_point_token">Swap GamePoint Tokens</string>
+    <string name="transactions_history">Transaction History</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="privacy_settings">Privacy Settings</string>
+    <string name="privacy_policy_2">Privacy Policy</string>
+    <string name="term_and_condition"><![CDATA[Terms & Conditions]]></string>
+    <string name="terms_of_contest_label">Terms Of Contest</string>
+    <string name="faq_label">FAQ</string>
+    <string name="log_out">Log Out</string>
+    <string name="enter_game_show">Enter game show</string>
+    <string name="prev_question">Prev question</string>
+    <string name="next_question">Next question</string>
+    <string name="submit_answers">Submit Answers</string>
+    <string name="view_all_event">View All Events</string>
+    <string name="view_all_rewards">View All Rewards</string>
+</resources>

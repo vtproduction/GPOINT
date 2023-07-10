@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/transparent"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="22"
+            android:background="@drawable/bg_05"
+            android:textColor="@color/c2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/txtQuestionNumber"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="đến cuối cùng chỉ những thứ như cơm, thịt, cá, trứng, sữa cho được vào người thì mới là có giá trị :))"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="8dp"
+        android:id="@+id/txtQuestionTitle"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:gravity="start"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:id="@+id/containerCheckbox"/>
+
+</LinearLayout>

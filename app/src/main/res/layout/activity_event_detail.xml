@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent_detail"
+    android:orientation="vertical"
+    tools:context=".ui.events.EventDetailActivity">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_event_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <ImageButton
+                    android:id="@+id/back_arrow"
+                    android:layout_width="14dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/icon_feather_chevron_left_orange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Check In"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="17sp" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="16dip"
+                    android:background="@drawable/ic_gamepoint_share" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <RelativeLayout
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/coordinator">
+
+        <fragment
+            android:id="@+id/mapView"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/directions"
+            android:layout_above="@+id/bottomPortion"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:drawableEnd="@drawable/directions_arrow"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:visibility="gone"
+            android:text="Get Directions"
+            android:textColor="@color/colorWhite" />
+
+        <RelativeLayout
+            android:id="@+id/bottomPortion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_splash">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="286dp"
+                            android:scaleType="centerCrop"
+                            android:id="@+id/imgHero"/>
+
+                        <include
+                            layout="@layout/layout_new_list_event_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_marginTop="236dp"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="90dp"
+                        android:gravity="center"
+                        android:text="Hello"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginTop="54dp"
+                        android:id="@+id/txtContent"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="90dp"
+                        android:gravity="center"
+                        android:text="Check-in &amp; Earn"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginTop="24dp"/>
+                    <!--<TextView
+                        android:id="@+id/eventTeams"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Minnesota vs Purdue"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="98dp"
+                        android:orientation="horizontal"
+                        android:padding="15dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_07"
+                        android:layout_marginTop="16dp">
+                        <ImageView
+                            android:layout_width="69dp"
+                            android:layout_height="69dp"
+                            android:src="@drawable/icon_header1"
+                            android:scaleType="fitXY"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="109901"
+                            android:textSize="43sp"
+                            android:id="@+id/txtPoint"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="98dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="44dp"
+                        android:layout_marginTop="44dp">
+                        <Button
+                            android:id="@+id/checkInDetail"
+                            style="@style/loginButton"
+                            android:width="157dp"
+                            android:layout_marginRight="14dp"
+                            android:text="Check In" />
+                        <Button
+                            android:id="@+id/getTicketsBtn"
+                            style="@style/loginButton"
+                            android:layout_width="157dp"
+                            android:layout_marginLeft="14dp"
+                            android:text="Get Tickets" />
+                    </LinearLayout>
+                    <!--<TextView
+                        android:id="@+id/eventTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/eventTeams"
+                        android:layout_centerHorizontal="true"
+                        android:padding="6dp"
+                        android:text="Football Sept \u2022 25th, 11:00am"
+                        android:textColor="#ff4a4a4a"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/eventTime"
+                        android:layout_centerHorizontal="true"
+                        android:text="420 SE 23rd AVE, Minneapolis, Mn, 55455"
+                        android:textColor="#ff999999"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:id="@+id/separator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/address"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="24dip"
+                        android:background="#ffdfdfdf" />-->
+
+                    <!--<Button
+                        android:id="@+id/checkInDetail"
+                        android:layout_width="345dp"
+                        android:layout_height="50dp"
+                        android:textAllCaps="false"
+                        android:layout_below="@+id/separator"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/btn_greenhighlight"
+                        android:text="Check in for 2000 points"
+                        android:textSize="16sp"
+                        android:textColor="#ff63bb3c" />
+
+                    <Button
+                        android:id="@+id/getTicketsBtn"
+                        android:layout_width="345dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/checkInDetail"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="Get Tickets"
+                        android:textColor="#ff63bb3c"
+                        android:textAllCaps="false"
+                        android:textSize="16sp" />-->
+                </LinearLayout>
+            </ScrollView>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

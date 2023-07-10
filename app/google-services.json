@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "490807793343",
+    "firebase_url": "https://gamepoint-243319.firebaseio.com",
+    "project_id": "gamepoint-243319",
+    "storage_bucket": "gamepoint-243319.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490807793343:android:877d8759bd1cc91f11d80a",
+        "android_client_info": {
+          "package_name": "com.jedmahonisgroup.gamepoint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490807793343-qj825n1s3bsj65pg2v5559cv67sodkr1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAmsym60gBWnERazlZPpXb8w_YnHFBdBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490807793343-qj825n1s3bsj65pg2v5559cv67sodkr1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "490807793343-nvkcjgs82dv5ih30qhfr6phrqi6urpfb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "fans.gamepoint.ios",
+                "app_store_id": "1470120995"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

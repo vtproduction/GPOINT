@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_alignParentStart="true"
+        android:id="@+id/profilePicPicks"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerVertical="true"
+        app:civ_border_width="2dp"/>
+
+
+    <TextView
+        android:layout_toEndOf="@id/profilePicPicks"
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="@color/colorUofMRed"
+        android:textSize="16sp"
+        android:paddingTop="8dp"
+        android:paddingLeft="16dp"
+        android:paddingBottom="4dip"/>
+
+    <TextView
+        android:layout_toEndOf="@id/profilePicPicks"
+        android:paddingEnd="10dip"
+        android:paddingLeft="16dp"
+        android:id="@+id/monthlyTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:textColor="@color/colorDefaultGrey" />
+
+    <TextView
+        android:layout_toEndOf="@id/monthlyTotal"
+        android:paddingEnd="10dip"
+        android:id="@+id/bulletPoint"
+        android:paddingRight="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:text="\u2022"
+        android:textColor="@color/colorDefaultGrey" />
+
+    <TextView
+        android:id="@+id/currentStreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:layout_toEndOf="@id/bulletPoint"
+        android:textColor="@color/colorDefaultGrey" />
+
+    <TextView
+        android:id="@+id/rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentStreak"
+        android:layout_toRightOf="@+id/profilePicPicks"
+        android:paddingLeft="16dp"
+
+        android:textColor="@color/colorDefaultGrey" />
+
+
+</RelativeLayout>

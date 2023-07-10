@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Custom spinner item layout -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerItemStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawablePadding="12dp"
+    android:ellipsize="marquee"
+    android:textColor="@color/colorWhite"
+    android:singleLine="true"
+    android:textSize="16sp" />

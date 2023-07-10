@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="eventViewModel"
+            type="com.jedmahonisgroup.gamepoint.ui.events.EventViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.events.EventsFragment">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/eventsTopToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upcoming Events"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="16dip">
+
+                    <ImageButton
+                        android:id="@+id/eventSettings"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/ic_settings" />
+
+
+                    <Button
+                        android:id="@+id/userPoints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_gravity="end"
+                        android:layout_toRightOf="@id/eventSettings"
+                        android:background="@drawable/green_button"
+                        android:textColor="@color/cardview_light_background" />
+
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeContainer"
+            android:background="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dayRv"
+                android:background="@drawable/bg_splash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/checkedinUi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/coordinator"
+            android:background="@color/colorWhite"
+            android:visibility="visible">
+            <fragment
+                android:id="@+id/mapView2"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/contentLayout"/>
+            <Button
+                style="@style/loginButton"
+                android:id="@+id/checkinBtn"
+                android:layout_width="240dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:text="Check In"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:visibility="visible" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:padding="9dp"
+                android:gravity="center"
+                android:background="@drawable/bg_08"
+                android:layout_marginTop="16dp">
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/icon_header1"
+                    android:scaleType="fitXY"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="9dp"
+                    android:text="109901"
+                    android:textSize="26sp"
+                    android:id="@+id/txtPoint"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:padding="12dp"
+                android:gravity="center"
+                android:background="#461D9A">
+                <TextView
+                    android:id="@+id/event_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:text="Minnesota vs Purdue"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/event_Name"
+                    android:layout_centerHorizontal="true"
+                    android:text="420 SE 23rd AVE, Minneapolis, Mn, 55455"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/eventTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/address"
+                    android:layout_centerHorizontal="true"
+                    android:text="Football Sept \u2022 25th, 11:00am"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14dp" />
+
+
+                <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+                    android:id="@+id/circular_progress"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_below="@id/eventTime"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginBottom="25dp"
+                    app:direction="clockwise"
+                    app:textColor="@color/colorWhite"
+                    app:progressColor="@color/colorGreen"
+                    app:textSize="24dp"
+                    app:startAngle="180" />
+
+                <TextView
+                    android:id="@+id/points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calculating Points"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    style="@style/loginButton"
+                    android:id="@+id/checkoutBtn"
+                    android:layout_width="240dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Check Out"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/eventNullView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_splash"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/myPickNoData"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_feather_meh" />
+
+            <TextView
+                android:id="@+id/errorEventText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/myPickNoData"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:text="Something went Wrong with the server"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/errorEventText"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorWhite"
+                android:text="Please try again later or swipe down to refresh"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/eventEmptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_splash"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/emptyEventTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="No Events Found"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/myEventEmptyData"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_above="@id/emptyEventTextView"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/icon_feather_meh" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emptyEventTextView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite"
+                android:text="Please check back later for more events near you!"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>
+
+
+
+
+

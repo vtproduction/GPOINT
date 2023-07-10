@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="picksViewModel"
+            type="com.jedmahonisgroup.gamepoint.ui.picks.PicksViewModel" />
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.picks.PicksFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:id="@+id/toolbar">
+
+
+                <Spinner
+                    android:id="@+id/flute"
+                    android:layout_width="160dp"
+                    android:layout_height="40dip"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:spinnerMode="dropdown" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="16dip">
+
+                    <ImageButton
+                        android:id="@+id/myPickSettings"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/ic_settings" />
+
+                    <Button
+                        android:id="@+id/myPickPointCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_gravity="end"
+                        android:layout_toRightOf="@id/myPickSettings"
+                        android:background="@drawable/green_button"
+                        android:textColor="@color/cardview_light_background" />
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <include
+        android:id="@+id/picks_timer_include"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        layout="@layout/picks_timer_layout"
+        android:visibility="gone"/>
+
+
+    <RelativeLayout
+        android:id="@+id/picks_parent_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/coordinator">
+
+        <RelativeLayout
+            android:id="@+id/infoBar"
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_alignParentStart="true"
+                android:id="@+id/profilePicPicks"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerVertical="true"
+                app:civ_border_width="2dp"/>
+
+
+            <TextView
+                android:layout_toEndOf="@id/profilePicPicks"
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/colorUofMRed"
+                android:textSize="16sp"
+                android:paddingTop="8dp"
+                android:paddingLeft="16dp"
+                android:paddingBottom="4dip"/>
+
+            <TextView
+                android:layout_toEndOf="@id/profilePicPicks"
+                android:paddingEnd="10dip"
+                android:paddingLeft="16dp"
+                android:id="@+id/monthlyTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userName"
+                android:textColor="@color/colorDefaultGrey" />
+
+
+            <TextView
+                android:paddingEnd="10dip"
+                android:paddingLeft="16dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/timerText"
+                android:text="00:00"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userName"
+                android:textSize="25dp"
+                android:visibility="gone"
+                android:textColor="@color/colorUofMRed" />
+
+
+
+            <!--<TextView-->
+            <!---->
+            <!--android:paddingEnd="10dip"-->
+            <!--android:id="@+id/bulletPoint"-->
+            <!--android:paddingRight="8dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/monthlyTotal"-->
+            <!--android:text="\u2022"-->
+            <!--android:textColor="@color/colorDefaultGrey" />-->
+
+            <TextView
+                android:id="@+id/currentStreak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/monthlyTotal"
+                android:layout_alignLeft="@id/monthlyTotal"
+                android:paddingLeft="16dp"
+                android:textColor="@color/colorDefaultGrey" />
+            <!--android:layout_toEndOf="@id/bulletPoint"-->
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/currentStreak"
+                android:layout_toRightOf="@+id/profilePicPicks"
+                android:paddingLeft="16dp"
+
+                android:textColor="@color/colorDefaultGrey" />
+
+
+        </RelativeLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/picks_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/goToTriviaPicksView"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myPicksRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"></androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/trivia_picks_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/goToTriviaPicksView"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trivia_PicksRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"></androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDefaultGrey"
+            android:layout_above="@+id/goToTriviaPicksView"
+            />
+
+        <RelativeLayout
+            android:id="@+id/goToTriviaPicksView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/infoBar"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/startTriviaQuestionsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/start_trivia_questions"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/startTriviaQuestionsTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:gravity="right"
+                android:text="@string/thirty_seconds"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/myPicksRLNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/myPickNoData"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_server_error" />
+
+            <TextView
+                android:id="@+id/noStreaksFoundTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/myPickNoData"
+                android:layout_centerInParent="true"
+                android:text="Something went Wrong with the server"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noStreaksFoundTxt"
+                android:layout_centerHorizontal="true"
+                android:text="Please try again later or swipe down to refresh"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/myDataEmptyView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/myPickEmptyData"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_no_data" />
+
+            <TextView
+                android:id="@+id/emptyPickText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/myPickEmptyData"
+                android:layout_centerInParent="true"
+                android:text="No Picks Found"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emptyPickText"
+                android:layout_centerHorizontal="true"
+                android:text="Check back soon for more picks!"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/checkBackAugustFirstPicks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/colorWhite"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/augustFirstTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Check back soon!"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/augustFirstImg"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/augustFirstTop"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_fire" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/augustFirstTop"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/august_fist_picks_bottom"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+</layout>

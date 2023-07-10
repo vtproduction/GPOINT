@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+
+    <data>
+        <variable
+            name="FeedsCreatPostViewModel"
+            type="com.jedmahonisgroup.gamepoint.ui.createpost.FeedsCreatPostViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.feeds.FeedsFragment">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center_vertical"
+                        android:paddingRight="30dp">
+
+
+
+                        <Button
+                            android:id="@+id/feedsCreatPostBackBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Back"
+                            android:background="@drawable/bg_selected"
+                            android:drawableLeft="@drawable/ic_arrow_left"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14dp"
+
+                            />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Select a photo"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18dp"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/feedsCreatPostNextBtn"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Next"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16dp"
+
+                            />
+
+
+                    </LinearLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/coordinator"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/imageNoData"
+                android:layout_width="147dp"
+                android:layout_height="195dp"
+                android:layout_above="@+id/laaaaaaaaaaaayo"
+                android:layout_below="@+id/imageView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/noDataFeedsImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/ic_no_data" />
+
+                <TextView
+                    android:id="@+id/noFeedsFoundTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/noDataFeedsImg"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="No image "
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/noFeedsFoundTxt"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="0dp"
+                    android:text=""
+                    android:textAlignment="center" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:layout_marginTop="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/event_fallback1000" />
+
+            <LinearLayout
+                android:id="@+id/Layooooooup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/laaaaaaaaaaaayo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+
+                    >
+
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="2"
+                        android:background="@color/colorWhite"
+                        android:text="Gallery" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black" />
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/feedsCreatPostPhotoBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:background="@color/colorWhite"
+                    android:text="Photo" />
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RCVGLIP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/laaaaaaaaaaaayo"
+                android:layout_below="@+id/imageView"
+                android:layout_marginBottom="2dp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</layout>

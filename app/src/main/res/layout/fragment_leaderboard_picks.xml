@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="streakViewModel"
+            type="com.jedmahonisgroup.gamepoint.ui.leaderboard.StreakViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_splash"
+        tools:context=".ui.leaderboard.StreakFragment">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/streak_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <!--Find a better way to change this text color-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leaderboard"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="16dip">
+
+                        <ImageButton
+                            android:id="@+id/streakSettings"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/ic_settings" />
+
+                        <Button
+                            android:id="@+id/totalPointCOunt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:layout_gravity="end"
+                            android:layout_toRightOf="@id/streakSettings"
+                            android:background="@drawable/green_button"
+                            android:textColor="@color/cardview_light_background" />
+
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <RelativeLayout
+            android:id="@+id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_below="@+id/coordinator"
+            android:layout_centerHorizontal="true">
+            <View
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:id="@+id/center_anchor"
+                android:layout_centerInParent="true"/>
+            <Button
+                android:id="@+id/pointsButton"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:text="Points Leader"
+                android:textAllCaps="false"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textColor="@color/colorWhite"
+                android:layout_toStartOf="@id/center_anchor"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/picksButton"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/center_anchor"
+                android:text="Winning Streak"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_transparent_50"
+                android:layout_alignParentBottom="true"
+                />
+            <View
+                android:layout_width="150dp"
+                android:layout_height="1dp"
+                android:background="@color/orange"
+                android:layout_alignStart="@+id/pointsButton"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/pointButton_ind"
+                android:visibility="gone"/>
+            <View
+                android:layout_width="150dp"
+                android:layout_height="1dp"
+                android:background="@color/orange"
+                android:layout_alignStart="@+id/picksButton"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/pickButton_ind"
+                android:visibility="visible"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/prize_field"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tabs"
+            android:paddingStart="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="0dp"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/prizesView"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/prizeImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
+                android:layout_centerVertical="true" />
+            <View
+                android:id="@+id/invisbleView"
+                android:layout_width="100dp"
+                android:layout_height="1dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="84dp"
+                android:layout_centerVertical="true"
+                android:visibility="invisible"/>
+
+            <TextView
+                android:id="@+id/prizeTopLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/invisbleView"
+                android:layout_marginStart="82dp"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/prizeDescLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/invisbleView"
+                android:layout_marginStart="82dp"
+                android:textAllCaps="false"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/streak_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_below="@+id/prize_field">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/picksRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"></androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/noDataView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/noDataImg"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_feather_meh" />
+
+            <TextView
+                android:id="@+id/noStreaksFoundTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noDataImg"
+                android:layout_centerInParent="true"
+                android:text="No Streaks Found"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noStreaksFoundTxt"
+                android:text="Check back soon for streaks"
+                android:textColor="@color/colorWhite"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

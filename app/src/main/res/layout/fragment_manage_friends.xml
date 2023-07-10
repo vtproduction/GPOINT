@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true"
+
+
+    >
+
+
+    <data>
+        <variable
+            name="FeedsCreatPostViewModel"
+            type="com.jedmahonisgroup.gamepoint.ui.createpost.FeedsCreatPostViewModel" />
+    </data>
+    <RelativeLayout
+        android:id="@+id/feedsFriendsLayout"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.managfriends.ManageFriendsFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/coordinator_friends"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/friendsappBarLayout"
+
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+
+
+                        <Button
+                            android:id="@+id/feedsCreatPostBackBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:text="Back"
+                            android:background="@drawable/bg_selected"
+                            android:drawableLeft="@drawable/ic_arrow_left"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14dp"
+
+                            />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:paddingTop="4dp"
+                        android:text="Friends"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_anchor="@+id/friendsappBarLayout"
+                        app:layout_anchorGravity="top|center" />
+
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginRight="20dp"
+                            android:text="Back"
+                            android:background="@drawable/bg_selected"
+                            android:drawableLeft="@drawable/ic_arrow_left"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14dp"
+                            android:visibility="invisible"
+
+                            />
+
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="#A3A3A3" />
+
+            <SearchView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:iconifiedByDefault="false"
+                android:id="@+id/search"
+                app:theme="@style/SearchViewStyle"
+                android:focusable="false"
+                >
+
+
+
+            </SearchView>
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+
+                android:background="#A3A3A3" />
+
+            <TextView
+                android:id="@+id/textviewSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:visibility="gone"
+
+                android:text="Search Results"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/searchNoDataView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone">
+
+
+
+                    <TextView
+                        android:id="@+id/nosearchFoundTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="There are no user that match your search."
+                        android:textAlignment="center"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+
+
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/reseultsearchRV"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:visibility="gone"
+
+                android:paddingBottom="20dp"
+                android:text="Friends Requests"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/friendsRequestRv"
+                android:visibility="gone"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="My Friends"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/friendsNoDataView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    android:layout_centerInParent="true"
+                    android:visibility="gone">
+
+
+
+                    <TextView
+                        android:id="@+id/nofriendsFoundTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="There are no friends."
+                        android:textAlignment="center"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+
+
+                </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myFriendsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>

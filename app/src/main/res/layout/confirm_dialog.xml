@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="345dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_diag_bg"
+    android:paddingTop="64dp"
+    android:paddingBottom="16dp">
+
+
+    <RelativeLayout
+        android:id="@+id/green_circle"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circle_green">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_party"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/checkedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/green_circle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="Checked In"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkedIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="You now have 22, 173 points"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/redeemPoints"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/info"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:layout_marginBottom="8dp"
+
+        android:background="@drawable/green_btn_filled_background"
+        android:text="Redeem some points"
+        android:textColor="@color/colorWhite"
+        style="@style/loginButton"/>
+
+    <Button
+        android:id="@+id/gotIt"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/redeemPoints"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_red_highlight_bkg"
+        android:text="Got It!"
+        android:textColor="@color/colorWhite"
+        style="@style/loginButton"
+        />
+
+</RelativeLayout>

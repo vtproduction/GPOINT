@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/notification_badge"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/notificationText"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@drawable/notification_badge"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="1"
+        android:layout_marginEnd="18dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="11sp" />
+</RelativeLayout>
+
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/counter_badge"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_gravity="top|center_horizontal"-->
+        <!--android:layout_marginStart="20dp"-->
+        <!--android:gravity="center"-->
+        <!--android:textSize="12sp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:ellipsize="end"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textColor="@color/colorWhite"-->
+        <!--android:padding="4dp"-->
+        <!--android:text="1"-->
+        <!--android:background="@drawable/notification_badge"/>-->
+<!--</FrameLayout>-->

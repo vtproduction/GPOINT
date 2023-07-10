@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:width="24dp"
+    android:height="24dp">
+        <path
+        android:pathData="M4 8L4 40L8 40L8 8L4 8M10 8L10 40L18 40L18 8L10 8M20 8L20 40L24 40L24 8L20 8M26 8L26 40L32 40L32 8L26 8M34 8L34 40L38 40L38 8L34 8M40 8L40 40L44 40L44 8L40 8z"
+        android:fillColor="#FFFFFF" />
+</vector>

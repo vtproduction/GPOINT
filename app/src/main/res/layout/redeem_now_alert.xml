@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="345dp"
+    android:padding="16dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_diag_bg">
+
+    <TextView
+        android:id="@+id/checkedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Redeem Now?"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dealDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkedIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:textAlignment="center"
+
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/redeemNowInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dealDescription"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/redeem"
+        android:layout_width="317dp"
+        android:layout_below="@+id/redeemNowInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:text="Redeem Points"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        style="@style/loginButton"/>
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="317dp"
+        android:layout_below="@+id/redeem"
+        android:layout_centerHorizontal="true"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="@color/colorWhite"
+        style="@style/loginButton"/>
+
+</RelativeLayout>
